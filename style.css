@@ -1,0 +1,193 @@
+:root {
+  --bg: #eef1f6;           /* latar halaman */
+  --card: #ffffff;         /* kartu konten */
+  --muted: #444;           /* teks pendukung */
+  --border: #e1e4ea;       /* garis tipis */
+
+  /* Aksen utama (pilih salah satu dominan, merah bawaan) */
+  --accent-red: #b22222;   /* firebrick / merah elegan */
+  --accent-brown: #8b3a3a; /* chestnut / coklat hangat */
+
+  /* Gunakan merah sebagai default; coklat jadi variasi halus */
+  --accent: var(--accent-red);
+  --accent-2: var(--accent-brown);
+}
+
+/* Reset & dasar */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+/* Layout halaman */
+.page {
+  max-width: 900px;
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  padding: 0 16px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #d7e0d5ea;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Banner nama (mengganti area foto) */
+.name-banner {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #f9f7f7;
+  border-radius: 10px;
+  padding: 16px 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(178, 34, 34, 0.18);
+}
+.full-name {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Judul section di sidebar */
+.section-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: #333;
+  border-bottom: 2px solid #cfd5e3;
+  padding-bottom: 6px;
+  margin: 10px 0 12px;
+}
+
+/* Kontak */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 8px 0;
+  color: var(--muted);
+}
+.icon { width: 22px; text-align: center; }
+
+/* Keahlian */
+.skill-list {
+  margin: 0;
+  padding-left: 20px; /* ordered list (angka) */
+}
+.skill-list li { margin: 6px 0; }
+
+/* Konten kanan */
+.content {
+  background: var(--card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+
+/* Header CV */
+.cv-header .title { display: inline-block; }
+.title-top {
+  display: block;
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #111;
+}
+.title-bottom {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #111;
+}
+
+/* Blok judul hitam dengan garis sisi beraksen */
+.block-title {
+  background: #111;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  margin: 18px 0 12px;
+  position: relative;
+}
+.block-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+/* Paragraf about */
+.about p { margin: 8px 2px 14px; color: #222; }
+
+/* Data pribadi grid 2 kolom */
+.grid-two {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 8px 14px;
+  align-items: start;
+}
+.label { color: #333; font-weight: 700; }
+.value { color: #333; }
+
+/* Pendidikan */
+.edu-block { margin: 8px 0 12px; }
+.edu-subtitle {
+  font-weight: 700;
+  margin: 8px 0;
+  position: relative;
+  color: var(--accent);
+}
+.edu-subtitle::before {
+  content: "•";
+  color: var(--accent-2);
+  margin-right: 8px;
+}
+.edu-list { margin: 0; padding-left: 18px; }
+.edu-list li { margin: 6px 0; }
+
+/* Link aksen (kalau nanti ada) */
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-2); text-decoration: underline; }
+
+/* Responsif */
+@media (max-width: 800px) {
+  .page { grid-template-columns: 1fr; }
+}
+
+/* Print ke A4 */
+@media print {
+  body { background: #fff; }
+  .page {
+    max-width: 210mm; margin: 0; padding: 0;
+    grid-template-columns: 70mm 1fr; gap: 10mm;
+  }
+  .sidebar, .content {
+    border: none; border-radius: 0; padding: 10mm;
+  }
+  .block-title { border-radius: 0; }
+  .name-banner { box-shadow: none; }
+}
