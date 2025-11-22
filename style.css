@@ -1,19 +1,18 @@
 :root {
-  --bg: #eef1f6;           /* latar halaman */
-  --card: #ffffff;         /* kartu konten */
-  --muted: #444;           /* teks pendukung */
-  --border: #e1e4ea;       /* garis tipis */
+  --bg: #eef1f6;           
+  --card: #ffffff;         
+  --muted: #444;           
+  --border: #e1e4ea;       
 
-  /* Aksen utama (pilih salah satu dominan, merah bawaan) */
-  --accent-red: #b22222;   /* firebrick / merah elegan */
-  --accent-brown: #8b3a3a; /* chestnut / coklat hangat */
+  --accent-red: #b22222;  
+  --accent-brown: #8b3a3a; 
 
-  /* Gunakan merah sebagai default; coklat jadi variasi halus */
+ 
   --accent: var(--accent-red);
   --accent-2: var(--accent-brown);
 }
 
-/* Reset & dasar */
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
@@ -24,7 +23,7 @@ body {
   line-height: 1.5;
 }
 
-/* Layout halaman */
+
 .page {
   max-width: 900px;
   margin: 24px auto;
@@ -34,7 +33,7 @@ body {
   padding: 0 16px;
 }
 
-/* Sidebar */
+
 .sidebar {
   background: #d7e0d5ea;
   border-radius: 12px;
@@ -44,7 +43,7 @@ body {
   overflow: hidden;
 }
 
-/* Banner nama (mengganti area foto) */
+
 .name-banner {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #f9f7f7;
@@ -60,7 +59,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Judul section di sidebar */
+
 .section-title {
   font-size: 0.95rem;
   letter-spacing: 0.06em;
@@ -70,7 +69,7 @@ body {
   margin: 10px 0 12px;
 }
 
-/* Kontak */
+
 .contact-list {
   list-style: none;
   margin: 0;
@@ -85,14 +84,14 @@ body {
 }
 .icon { width: 22px; text-align: center; }
 
-/* Keahlian */
+
 .skill-list {
   margin: 0;
-  padding-left: 20px; /* ordered list (angka) */
+  padding-left: 20px; 
 }
 .skill-list li { margin: 6px 0; }
 
-/* Konten kanan */
+
 .content {
   background: var(--card);
   border-radius: 12px;
@@ -100,7 +99,7 @@ body {
   padding: 22px;
 }
 
-/* Header CV */
+
 .cv-header .title { display: inline-block; }
 .title-top {
   display: block;
@@ -117,7 +116,7 @@ body {
   color: #111;
 }
 
-/* Blok judul hitam dengan garis sisi beraksen */
+
 .block-title {
   background: #111;
   color: #fff;
@@ -140,10 +139,10 @@ body {
   border-bottom-left-radius: 6px;
 }
 
-/* Paragraf about */
+
 .about p { margin: 8px 2px 14px; color: #222; }
 
-/* Data pribadi grid 2 kolom */
+
 .grid-two {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -153,7 +152,7 @@ body {
 .label { color: #333; font-weight: 700; }
 .value { color: #333; }
 
-/* Pendidikan */
+
 .edu-block { margin: 8px 0 12px; }
 .edu-subtitle {
   font-weight: 700;
@@ -169,16 +168,16 @@ body {
 .edu-list { margin: 0; padding-left: 18px; }
 .edu-list li { margin: 6px 0; }
 
-/* Link aksen (kalau nanti ada) */
+
 a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-2); text-decoration: underline; }
 
-/* Responsif */
+
 @media (max-width: 800px) {
   .page { grid-template-columns: 1fr; }
 }
 
-/* Print ke A4 */
+
 @media print {
   body { background: #fff; }
   .page {
